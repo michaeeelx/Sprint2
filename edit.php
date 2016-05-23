@@ -50,6 +50,30 @@
 	    border-radius: 15px;
         text-align:center;">
             <div style = "background-color:#81F7F3; color:#FFFFFF; padding:8px;"><b>Login</b></div>
+            
+             <div style = "margin:60px">
+               
+               <form action = "" method = "post"><?php
+               echo"
+                  <label>Product Name:</label>
+                  <input value='$product' type = 'text' name = 'PName' class ='box'/>
+                  <br /><br />
+                  <label>Product Quantity:</label>
+                  <input value='$quantity' type = 'text' name = 'QTY' class ='box' />
+                  <br/><br />
+				    <label>Sold Quantity:</label>
+				  <input value='$Sold' type = 'text' name = 'Sold' class ='box' />
+                  <input type = 'submit' name='Changing' value='Save Changes'/><br />
+
+                  ";?>
+               </form>
+               <div style = "font-size:11px; color:#cc0000; margin-top:10px">
+               <?php if(isset($_POST["Changing"])) {
+                  ChangeData($_POST['PName'],$_POST['QTY'],$_POST['Sold'],$_GET);
+			   } {
+               }  ?>
+               <?php echo $error; ?>
+               </div>
 				
 
 					
