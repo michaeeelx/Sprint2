@@ -2,6 +2,29 @@
    include("config.php");
    $error = "";
    session_start();
+   
+   function Delete(&$get){
+   $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
+   $ID=$get['ID'];
+   $sql = "DELETE FROM Products WHERE ID = $ID";
+   if (mysqli_query($link, $sql)) { 
+    
+    return true; 
+} else {
+    $message =  "WRONG VALUES";
+echo "<script type='text/javascript'>alert('$message');</script>";
+return false;
+}
+
+}
+function Data(&$get, &$name){
+   $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
+   $ID=$get['ID'];
+   $result =mysqli_query($link,"SELECT * FROM Products Where ID=$ID");
+   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   return $row[$name];
+
+}
 
 function ChangeData(&$Name, &$QTY, &$sold, &$get){
    $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
