@@ -7,7 +7,7 @@
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <!--<link href="css/StyleCK.css" rel="stylesheet">-->
 
-
+      <title>PHP -- SRS logged in as <?php echo $_SESSION['login_user'];?> </title>
     
       
       <style type = "text/css">
