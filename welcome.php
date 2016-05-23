@@ -80,7 +80,9 @@
 	    <input type="submit" class="btn btn-primary" name="off" value="View Stock and Inventory Levels"></input>
             <br/>	
             <br/>
-	
+            <form action="welcome.php" method="POST">
+              <input type="submit" class="btn btn-primary" name="clicked" value="Export To CSV"> 
+            </form>
 	    </div>
           </div>	
         </div>	
