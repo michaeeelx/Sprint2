@@ -73,6 +73,9 @@
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add Product to stock and inventory</button>
             <br/>
 	    <br/>
+	    <input type="submit" class="btn btn-primary" name="off" value="View Stock and Inventory Levels"></input>
+            <br/>	
+            <br/>
 			
 	<div align = "center">
          <div style = "width:50%; border: solid 1px #333333; " align = "left">
