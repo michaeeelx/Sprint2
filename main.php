@@ -3,12 +3,20 @@
    $error = "";
    session_start();
 
-   
-
-
-
-
+function Grabuser(&$id){
+      $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
+      $result = mysqli_query($link,"SELECT * FROM Users where ID='$id'");
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      return $row['Name'];
    }
+   
+   function grabid(&$id){
+      $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
+      $result = mysqli_query($link,"SELECT * FROM Users where Name='$id'");
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      return $row['ID'];
+   }
+   
    function addingaproduct(&$data, &$uid){
       $db = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
 
