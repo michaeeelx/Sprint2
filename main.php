@@ -3,6 +3,23 @@
    $error = "";
    session_start();
 
+function ChangeData(&$Name, &$QTY, &$sold, &$get){
+   $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
+   $ID=$get['ID'];
+   $sql = "UPDATE Products SET Product='$Name', Quantity='$QTY', Sold='$sold' WHERE ID= '$ID' ";
+   if (mysqli_query($link, $sql)) {
+      header('Location: welcome.php' );
+       $error = "Updated"; 
+   } else {
+    $message =  "WRONG VALUES";
+   echo "<script type='text/javascript'>alert('$message');</script>";
+   //echo $sql;
+}
+   //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   //header(string)
+      //return $row['Name'];
+}
+
 function Grabuser(&$id){
       $link = mysqli_connect("127.0.0.1", "root", "", "sppmdatabase");
       $result = mysqli_query($link,"SELECT * FROM Users where ID='$id'");
