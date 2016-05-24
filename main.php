@@ -119,7 +119,7 @@ echo "<script type='text/javascript'>alert('$message');</script>";
     $message =  "Please check the entered values";
 echo "<script type='text/javascript'>alert('$message');</script>";
 //echo $sql;
-}
+} 
 
    }
 ?>
